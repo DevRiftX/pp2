@@ -10,8 +10,9 @@ print("""Interface Status
 DN                                                 Description           Speed    MTU  
 -------------------------------------------------- --------------------  ------  ------""")
 
-temp = []
+
 for data in fcc_data["imdata"]:
+    temp = []
     for i in range(4):
         temp.append(((data["l1PhysIf"])["attributes"])[values[i]])
     print(f"{temp[0]}            {temp[1]}                  {temp[2]}   {temp[3]}")
