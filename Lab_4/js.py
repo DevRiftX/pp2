@@ -18,11 +18,11 @@ for data in fcc_data["imdata"]:
     print(f"{temp[0]:50} {temp[1]:20}  {temp[2]:6}  {temp[3]:6}")
 
 def fetch(data):
-    for i in data["imdata"]:
-        file = (i["l1PhysIf"])["attributes"]
-        yield f"{file['dn']:50} {file['descr']:20} {file['speed']:6}   {file['mtu']:6}"
+    for element in data["imdata"]:
+        temp = (element["l1PhysIf"])["attributes"]
+        yield f"{temp['dn']:50} {temp['descr']:20} {temp['speed']:6}   {temp['mtu']:6}"
 
-print("""Interface Status
+print("\n" * 8 + """Interface Status
 ================================================================================
 DN                                                 Description           Speed    MTU  
 -------------------------------------------------- --------------------  ------  ------""")
