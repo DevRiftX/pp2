@@ -3,7 +3,7 @@ import json
 with open('Lab_4/sample-data.json', 'r') as fcc_file:
     fcc_data = json.load(fcc_file)
 
-values = ['dn', 'descr', 'speed', 'mtu']
+values = ('dn', 'descr', 'speed', 'mtu')
 
 print("""Interface Status
 ================================================================================
