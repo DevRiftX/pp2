@@ -2,7 +2,7 @@ import pygame, random, sys, json
 
 pygame.init()
 
-WIDTH, HEIGHT, CELL_SIZE = 400, 300, 25
+WIDTH, HEIGHT, CELL_SIZE = 800, 500, 40
 CELL_WIDTH = WIDTH // CELL_SIZE
 CELL_HEIGHT = HEIGHT // CELL_SIZE
 
@@ -147,7 +147,7 @@ def main():
             foods.append(create_food(snake))
             if score % FOOD_PER_LEVEL == 0:
                 level += 1
-                speed = BASE_SPEED + (level - 1) * 2
+                speed = BASE_SPEED + (level - 1) # * 2
         else:
             snake.pop()
 
