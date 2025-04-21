@@ -1,12 +1,12 @@
 import psycopg2
-import csv
+import csv, re
 
 # Connect to PostgreSQL
 conn = psycopg2.connect(
     host="localhost",
     database="mydatabase",
     user="postgres",
-    password="фывфыв"
+    password="idk"
 )
 cur = conn.cursor()
 
@@ -46,7 +46,7 @@ def insert_many_users(user_list):
     incorrect_data = []
     for user in user_list:
         name, phone = user
-        if phone.startswith("+") and phone[1:].isdigit() and len(phone) >= 10:
+        if not re.fullmatch(r"\+\d{10,15}", phone):
             incorrect_data.append(user)
             continue
         insert_or_update_user(name, phone)
